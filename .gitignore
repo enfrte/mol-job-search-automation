@@ -1,0 +1,5 @@
+.env
+notes.txt
+.vscode
+node_modules
+functions
