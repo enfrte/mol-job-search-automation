@@ -1,5 +1,8 @@
 // HELP: https://bitsofco.de/how-to-use-puppeteer-in-a-netlify-aws-lambda-function/
 // Used as Netlify Lambda Function
+
+process.env.AWS_LAMBDA_FUNCTION_NAME = 'whatever'; 
+
 const chromium = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-core');
 

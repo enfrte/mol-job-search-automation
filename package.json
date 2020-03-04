@@ -2,10 +2,13 @@
   "name": "mol-job-search-automation",
   "version": "1.0.0",
   "description": "",
-  "main": "lambda/scrapeMol.js",
+  "main": "index.js",
   "scripts": {
     "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions"
+    "lambda-build": "netlify-lambda build functions",
+    "build": "npm run build:bundled; npm run build:zipped",
+    "build:bundled": "netlify-lambda build lambda/bundled-function",
+    "build:zipped": "cd lambda/zipped-function; npm i; cd ..; zip -r ../functions/zipped-function.zip zipped-function"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +16,7 @@
   "dependencies": {
     "chrome-aws-lambda": "^2.1.1",
     "netlify-lambda": "^1.6.3",
+    "nodemon": "^2.0.2",
     "puppeteer-core": "^2.1.1"
   },
   "devDependencies": {

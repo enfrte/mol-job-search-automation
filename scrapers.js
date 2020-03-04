@@ -25,12 +25,13 @@ async function scrapeMol(url) {
       });
       return results;
     });
-    console.log({urls});
-    return {urls};
+    //console.log({urls});
+    return urls;
   } catch (err) {
     console.error(err.message);
   } finally {
     await browser.close();
   }
 }
-scrapeMol(MolUrl);
+exports.scrapeMol = scrapeMol;
+//scrapeMol(MolUrl);
